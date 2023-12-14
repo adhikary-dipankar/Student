@@ -1,0 +1,92 @@
+.contact-container {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .contact{
+    margin-left: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  #con:hover{
+    background-color: rgb(234, 194, 64);
+    cursor: grabbing;
+
+  }
+
+  h2 {
+    font-size: 25px;
+    color: #003264;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  h3 {
+    font-size: 20px;
+    color: #0e7cd6;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+.error{
+  color: rgb(223, 12, 12);
+  font-size: 18px;
+}
+
+div label {
+    font-size: 20px;
+    color: #045a94;
+
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea {
+    width: 60%;
+    height: 80%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #d95555;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  .submit-button {
+    background-color: #0f5c9c;
+    color: #f1eff3;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    
+  }
+  
+  .submit-button:hover {
+    background-color: #0b8353;
+  }
+
+
+  footer {
+    background-color: #ffffff;
+    color: #000000;
+    margin: 4px;
+    padding: 2px;
+   
+  }
+
+  footer p {
+    font-size: 16px;
+    text-align: center;
+  }

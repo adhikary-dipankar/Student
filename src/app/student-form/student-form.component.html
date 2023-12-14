@@ -1,0 +1,225 @@
+<section>
+  
+    <div class="head-bar">
+        <h2><i class="fas fa-shield-alt logo-icon"></i> Student Registration Form <i class="fas fa-shield-alt logo-icon"></i></h2>
+    </div>
+    <br>
+    
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8"> 
+        <div class="form-container" id="form">
+          <form (ngSubmit)="onSubmit()" [formGroup]="studentForm">
+            <div>
+              <label for="Id"> <i class="fa-solid fa-arrow-down-wide-short"></i> Student ID</label>
+              <input type="number" id="Id" formControlName="Id" required>
+              <span class="error" *ngIf="studentForm.get('Id')?.hasError('required') && studentForm.get('Id')?.touched">
+                Student Id is required.
+              </span>
+            </div>
+            <div>
+              <label for="FirstName"><i class="fa-solid fa-file-signature"></i> First Name</label>
+              <input type="text" id="FirstName" formControlName="FirstName" required>
+              <span class="error" *ngIf="studentForm.get('FirstName')?.hasError('required') && studentForm.get('FirstName')?.touched">
+                First Name is required.
+              </span>
+            </div>
+    
+            <div>
+              <label for="LastName"> <i class="fa-solid fa-file-signature"></i> Last Name</label>
+              <input type="text" id="LastName" formControlName="LastName" required>
+              <span class="error" *ngIf="studentForm.get('LastName')?.hasError('required') && studentForm.get('LastName')?.touched">
+                Last Name is required.
+              </span>
+            </div>
+    
+            <div>
+              <label for="Age"> <i class="fa-brands fa-magento"></i> Age</label>
+              <input type="number" id="Age" formControlName="Age" required>
+              <span class="error" *ngIf="studentForm.get('Age')?.hasError('min') && studentForm.get('Age')?.touched">
+                Age must be above 16.
+              </span>
+              <span class="error" *ngIf="studentForm.get('Age')?.hasError('max') && studentForm.get('Age')?.touched">
+                Age must be below 35.
+              </span>
+            </div>
+    
+            <div>
+              <label for="DateofBirth"><i class="fa-regular fa-calendar-check"></i> DOB</label>
+              <input type="date" id="DateofBirth" formControlName="DateofBirth" required>
+              <span class="error" *ngIf="studentForm.get('DateofBirth')?.hasError('required') && studentForm.get('DateofBirth')?.touched">
+                DOB is required.
+              </span>
+            </div>
+    
+            <div>
+              <label for="PhoneNumber"><i class="fa-solid fa-phone"></i> Phone Number</label>
+              <input type="number" id="PhoneNumber" formControlName="PhoneNumber" required>
+              <span class="error" *ngIf="studentForm.get('PhoneNumber')?.hasError('required') && studentForm.get('PhoneNumber')?.touched">
+                Phone Number is required.
+              </span>
+            </div>
+    
+            <div>
+              <label for="Email"><i class="fa-regular fa-envelope"></i> Email</label>
+              <input type="email" id="Email" formControlName="Email" required>
+              <span class="error" *ngIf="studentForm.get('Email')?.hasError('required') && studentForm.get('Email')?.touched">
+                Email is required (e.g., example@gmail.com).
+              </span>
+            </div>
+    
+            <div>
+              <label for="BloodGroup"> <i class="fa-solid fa-hand-holding-droplet"></i> Blood Group</label>
+              <input type="text" id="BloodGroup" formControlName="BloodGroup" required>
+              <span class="error" *ngIf="studentForm.get('BloodGroup')?.hasError('required') && studentForm.get('BloodGroup')?.touched">
+                Blood Group is required.
+              </span>
+            </div>
+    
+            <div>
+              <label for="Address"><i class="fa-regular fa-address-card"></i> Address</label>
+              <input type="text" id="Address" formControlName="Address" required>
+              <span class="error" *ngIf="studentForm.get('Address')?.hasError('required') && studentForm.get('Address')?.touched">
+                Address is required.
+              </span>
+            </div>
+            <div class="error" *ngIf="studentForm.invalid && studentForm.touched">Please fill out all required fields.</div>
+            <div style="text-align: center;">
+              <button type="submit" [disabled]="!studentForm.valid"><i class="fa-solid fa-right-to-bracket"></i> Submit</button>
+              <button type="button" (click)="clearForm()" id="clear"> <i class="fa-solid fa-xmark"></i> Cancel</button>
+            </div>
+          </form>
+        </div>
+        <h5 style="text-align: center; color: rgb(17, 104, 216);">{{msg}}</h5>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+    
+    <br>
+    
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6" id="search">
+        <div class="student-details">
+          <h4 style="text-align: center; color: rgb(17, 104, 216);">Student Details</h4>
+          <div>
+            <label for="searchId">Search by ID:</label>
+            <input type="number" id="searchId" [(ngModel)]="searchId" placeholder="Enter Student Id" />
+            <button type="button" style="display: inline-block; margin-right: 10px;"(click)="searchById()"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            <button type="button" style="display: inline-block; margin-right: 10px;" (click)="DFormData()"><i class="fa-solid fa-xmark"></i> Clear</button>
+    
+    
+          </div>
+          <div *ngIf="studentDetails">
+            <h5 style="text-align: center; color: rgb(17, 104, 216);">Details for Student ID {{ searchId}}</h5>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td><strong><i class="fa-regular fa-user"></i> Name</strong></td>
+                  <td>{{ studentDetails["FirstName"] }} {{ studentDetails["LastName"] }}</td>
+                </tr>
+                <tr>
+                  <td><strong><i class="fa-brands fa-pagelines"></i> Age</strong></td>
+                  <td>{{ studentDetails["Age"] }}</td>
+                </tr>
+                <tr>
+                  <td><strong><i class="fa-solid fa-calendar-week"></i> DOB</strong></td>
+                  <td>{{ studentDetails["DateofBirth"] }}</td>
+                </tr>
+                <tr>
+                  <td><strong><i class="fa-solid fa-hand-holding-droplet"></i> Blood Group</strong></td>
+                  <td>{{ studentDetails["BloodGroup"] }}</td>
+                </tr>
+                <tr>
+                  <td><strong><i class="fa-solid fa-square-phone"></i> Phone Number</strong></td>
+                  <td>{{ studentDetails["PhoneNumber"] }}</td>
+                </tr>
+                <tr>
+                  <td><strong><i class="fa-solid fa-square-envelope"></i> Email</strong></td>
+                  <td>{{ studentDetails["Email"] }}</td>
+                </tr>
+                <tr>
+                  <td><strong><i class="fa-solid fa-map-location-dot"></i> Address</strong></td>
+                  <td>{{ studentDetails["Address"] }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="text-align: center;">
+              <button type="button" style="display: inline-block; margin-right: 10px;"  (click)="editStudentDetails()"><i class="fa-solid fa-user-pen"></i> Edit</button>
+              <button type="button" style="display: inline-block; margin-right: 10px;" (click)="deleteStudentDetails()"><i class="fa-solid fa-user-xmark"></i> Delete</button>
+            </div>
+          </div>
+    
+          
+          <div *ngIf="!studentDetails && searchId !== null">
+            <h4 style="text-align: center;color: rgb(4, 108, 74);">No student found with ID <span style="color: rgb(203, 66, 17);">{{ searchId }}</span>.</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+    
+    <br><br><br>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6" id="show">
+        <div style="text-align: center;">
+          <button type="button" style="display: inline-block; margin-right: 10px;font-size: 140%;border-radius: 10px;" (click)="showFormData()"><i class="fa-solid fa-eye"></i> Show</button>
+          <button type="button" style="display: inline-block;margin-right: 10px;font-size: 140%;" (click)="showFormData()" class="icon2"><i class="fa-solid fa-retweet"></i> Refresh</button>
+          <button type="button" style="display: inline-block; margin-right: 10px;font-size: 140%;" (click)="DShowFormData()" class="icon1"><i class="fa-regular fa-eye-slash"></i> Hide</button>
+        </div>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+    
+    <div class="row" *ngIf="Result">
+      <div class="col-sm-1"></div>
+        <div class="col-sm-10" id="list">
+          <div class="submitted-forms">
+            <h4 style="text-align: center; color: rgb(17, 104, 216);">Details of Students</h4>
+            <table class="table">
+              <thead>
+              <tr>
+                <th><i class="fa-solid fa-list-ol"></i> ID</th>
+                <th><i class="fa-solid fa-users"></i> Name</th>
+                <th><i class="fa-brands fa-pagelines"></i> Age</th>
+                <th><i class="fa-solid fa-calendar-week"></i> DOB</th>
+                <th><i class="fa-solid fa-hand-holding-droplet"></i> Blood Group</th>
+                <th><i class="fa-solid fa-phone"></i> Phone Number</th>
+                <th><i class="fa-solid fa-envelope-open-text"></i> Email</th>
+                <th><i class="fa-regular fa-address-card"></i> Address</th>
+                <th><i class="fa-regular fa-pen-to-square"></i> Modify</th>
+                <th><i class="fa-solid fa-trash-can-arrow-up"></i> Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let form of Result; let i = index">
+                <td>{{form["Id"]}}</td>
+                <td>{{ form["FirstName"]}} {{ form["LastName"]}}</td>
+                <td>{{ form["Age"]}}</td>
+                <td>{{ form["DateofBirth"]}}</td>
+                <td>{{ form["BloodGroup"]}}</td>
+                <td>{{ form["PhoneNumber"]}}</td>
+                <td>{{ form["Email"]}}</td>
+                <td>{{ form["Address"]}}</td>
+                <td>
+                  <button id="edit" (click)="editStdForm(i)"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                </td>
+                <td>
+                  <button id="delete" (click)="deleteForm(i)"><i class="fa-solid fa-trash-arrow-up"></i> Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+    
+    </section>
+    <br><br><br><br><br>
+    <footer>
+      <p><i class="fa-regular fa-copyright"></i> 2023 StudentSync <i class="fa-solid fa-dragon"></i> . Made by Dipankar Adhikary with <i class="fa-brands fa-gratipay"></i></p>
+    </footer>
+    
+  

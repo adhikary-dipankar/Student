@@ -1,0 +1,22 @@
+<div class="app-container">
+  <header>
+      <h2 *ngIf="userlog"><a routerLink="/home" style="color: rgb(255, 255, 255);font-family: 'Roboto', sans-serif;padding-left: 10px;"><i class="fas fa-dragon"></i> StudentSync</a></h2>
+      <h4><i *ngIf="userlogD" class="fa-solid fa-user-xmark"></i><i *ngIf="userlog" class="fa-solid fa-user-check"></i><a routerLink="/home"> {{username}}</a></h4>
+      
+      <nav *ngIf="userlog">
+        <a routerLink ="/home"><i class="fa-solid fa-house-chimney-crack"></i> Home</a>
+        <a routerLink="/about"><i class="fa-solid fa-eject"></i> About Us</a>
+        <a routerLink="/programs"><i class="fa-solid fa-bars-progress"></i> Programs</a>
+        <a routerLink="/form"><i class="fa-regular fa-rectangle-list"></i> Form</a>
+        <a routerLink="/contact"><i class="fa-solid fa-id-card"></i> Contact Us</a>
+        <a><button type="button" (click)="logout()"><i class="fas fa-sign-in-alt"></i> {{log}}</button></a>
+
+        
+      </nav>
+        
+  </header>
+  <body>
+    <router-outlet></router-outlet>
+  </body>
+</div>
+
