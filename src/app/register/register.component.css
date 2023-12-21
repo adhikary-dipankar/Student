@@ -35,30 +35,27 @@ body {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
-    border: 1px solid #380a8ef0;
+    border: 0px solid #380a8ef0;
     border-radius: 5px;
+    background-color: #f0f0f0;
   }
   
   .error {
     color: #e22074;
     font-size: 16px;
-    text-align: center;
+    text-align: left;
     margin: 10px 0;
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-  
   }
-  
-  
-  input[type="text"]:invalid,
-  input[type="number"]:invalid,
-  input[type="password"]:invalid,
-  input[type="email"]:invalid {
-      border-color: rgb(153, 10, 10); 
-  }
-  
-  
+
+
+
+div input:invalid {
+  border-color: #ff0000; 
+  box-shadow: 0 0 5px rgba(223, 19, 135, 0.804); 
+}
+
+
   
   label{
     font-weight: bold;

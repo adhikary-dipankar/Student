@@ -19,7 +19,7 @@ export class RegisterComponent {
       UserName: ['', Validators.required],
       UserPassword: ['', Validators.required],
       Name:['',Validators.required],
-      Email:['',[Validators.required,Validators.pattern(/^[a-zA-Z0-9._%+-]+@gmail\.com$/)]]
+      Email:['',[Validators.required,Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)]]
     });
   }
 

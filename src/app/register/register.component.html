@@ -9,21 +9,21 @@
           <form (ngSubmit)="onSubmit()" [formGroup]="studentForm">
               <div>
                 <label for="Name"><i class="fa-solid fa-file-signature"></i> Name</label>
-                <input type="text" id="Name" formControlName="Name" required>
+                <input type="text" id="Name" formControlName="Name" required placeholder="Your Name is required." >
                 <span class="error" *ngIf="studentForm.get('Name')?.hasError('required') && studentForm.get('Name')?.touched">
                 User Name is required.
                 </span>
             </div>
             <div>
               <label for="Email"><i class="fa-regular fa-envelope"></i> E-mail</label>
-              <input type="email" id="Email" formControlName="Email" required>
+              <input type="email" id="Email" formControlName="Email" required placeholder="Your Email Id is required (e.g => example@example.in/.com)">
               <span class="error" *ngIf="studentForm.get('Email')?.hasError('required') && studentForm.get('Email')?.touched">
-              User Email is required (e.g., example@gmail.com).
+              User Email is required (e.g.,  example@example.in/.com).
               </span>
             </div>
             <div>
                 <label for="UserName"><i class="fas fa-user"></i> New User ID</label>
-                <input type="text" id="UserName" formControlName="UserName" required>
+                <input type="text" id="UserName" formControlName="UserName" required placeholder="User ID is required">
                 <span class="error" *ngIf="studentForm.get('UserName')?.hasError('required') && studentForm.get('UserName')?.touched">
                 User ID is required.
                 </span>
@@ -31,7 +31,7 @@
   
             <div>
                 <label for="UserPassword"><i class="fas fa-lock"></i> New User Password</label>
-                <input type="password" id="UserPassword" formControlName="UserPassword" required>
+                <input type="password" id="UserPassword" formControlName="UserPassword" required placeholder="Password is required">
                 <span class="error" *ngIf="studentForm.get('UserPassword')?.hasError('required') && studentForm.get('UserPassword')?.touched">
                 User Password is required.
                 </span>
