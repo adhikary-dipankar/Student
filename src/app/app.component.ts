@@ -11,6 +11,13 @@ export class AppComponent {
   log:string="";
   userlog:boolean=false;
   userlogD:boolean=true;
+  userName:string='';
+  name:string='';
+  email:string='';
+  id:string='';
+  pass:string='';
+  showData:boolean=false;
+
 
 
   constructor(private std:StudentService , private router:Router){}
@@ -18,7 +25,7 @@ export class AppComponent {
 
     const user =this.std.username;
     if(user!=''){
-      return this.log="Logout",this.userlog=true,this.userlogD=false,user;
+      return this.log="Logout",this.userlog=true,this.userlogD=false,this.userName=user,user;
       
     }
   }
@@ -31,5 +38,15 @@ export class AppComponent {
     this.router.navigate(['/login'])
   }
 
+  show(){
+
+    this.name = (JSON.parse(localStorage.getItem(this.userName)!) || {}).Name || '';
+    this.email = (JSON.parse(localStorage.getItem(this.userName)!) || {}).Email || '';
+    this.id = (JSON.parse(localStorage.getItem(this.userName)!) || {}).UserName || '';
+    this.pass = (JSON.parse(localStorage.getItem(this.userName)!) || {}).UserPassword || '';
+    
+    this.showData=!this.showData;
+    
+  }
 
   }

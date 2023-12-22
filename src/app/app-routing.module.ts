@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'programs', component: ProgramsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'form', component: StudentFormComponent },
-  { path: '', redirectTo: '/register', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
 @NgModule({

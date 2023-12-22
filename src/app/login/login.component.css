@@ -114,6 +114,8 @@ body {
   
   button[type="submit"][disabled] {
     cursor: not-allowed; 
+    background-color: #0d64c1;
+
   }
 
   footer {

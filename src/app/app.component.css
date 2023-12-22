@@ -11,7 +11,7 @@
     align-items: center;
     color: #000000;
     padding: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     position: fixed; 
     width: 100%; 
     top: 0; 
@@ -83,33 +83,68 @@
     color: #ef9220;
     cursor: grab;
   }
+
+  .user-details-bar {
+    position: relative; 
+    display: inline-block; 
+}
+
+.user-details-dropdown {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1; 
+    background-color: #eb842f; 
+    border: 1px solid #e4c515; 
+    border-radius: 8px; 
+    width: max-content; 
+}
+
+.user-details-bar:hover .user-details-dropdown {
+    display: block; 
+    background-color: #5f9fe0;
+}
+
+.user-details-dropdown p {
+    margin: 5px;
+    padding: 5px;
+    cursor: grab;
+}
+
+
+
+
   @media only screen and (min-width: 600px) {
 
     header {
-      padding: 5px;
+      padding: 4px;
+    }
+    header.h2.i{
+      font-size: large;
     }
   
-    h2 {
-      font-size: 24px;
+    div h2, h2 {
+      font-size: 20px;
     }
   
-    h4 {
-      font-size: 16px; /* Adjust font size for larger screens */
+    div h4,h3,h5 {
+      font-size: 16px;
     }
   
     nav a {
-      font-size: 16px; 
+      font-size: 20px; 
     }
   }
   
 
   @media only screen and (max-width: 600px) {
     .app-container{
-      padding-top: 350px;
+      padding-top: 280px;
     }
 
     header {
-      flex-direction: column;
+      flex-direction: row-reverse;
       align-items: flex-start;
       padding: 10px;
     }
@@ -117,6 +152,7 @@
     h2,
     h4 {
       margin-bottom: 10px;
+      font-size: 14px;
     }
   
     nav {
@@ -127,9 +163,11 @@
   
     nav a {
       margin: 5px 0;
+      font-size: 15px;
     }
   
     button {
       margin-top: 10px;
     }
+    
   }

@@ -104,8 +104,8 @@ div input:invalid {
     text-align: center;
   }
   
-  
-  
   button[type="submit"][disabled] {
     cursor: not-allowed; 
+    background-color: #0d64c1;
+
   }

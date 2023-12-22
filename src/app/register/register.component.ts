@@ -25,7 +25,6 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.studentForm.valid) {
-      console.log(this.studentForm.value);
       this.std.registerUserLocally(this.studentForm.value);
       this.Result = 'User registered successfully.';
       this.success=true;

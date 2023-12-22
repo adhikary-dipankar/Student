@@ -38,6 +38,10 @@
                         </button>
                     </div>
                     <br>
+                    <span style="text-align: center; color: red;" *ngIf="studentForm.invalid && studentForm.touched">
+                      <h6>Kindly re-check userid & password before login.</h6>
+                    </span>
+                    <br>
   
                     <div>
                         <h5>Don't have an account?</h5>
