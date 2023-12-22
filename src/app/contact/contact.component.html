@@ -1,0 +1,67 @@
+
+<br>
+<section>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="contact-container" id="con">
+        <h2><i class="fa-solid fa-id-card-clip"></i> Contact Us</h2>
+        <p>If you have any questions or feedback, please feel free to reach out to us using the form below:</p>
+
+        <div class="contact">
+          
+          <form (ngSubmit)="onSubmit()" [formGroup]="contactUs">
+            <div>
+              <label for="name"> <i class="fa-solid fa-file-signature"></i> Name</label><br>
+              <input type="text" id="firstName" formControlName="name" required>
+              <div class="error" *ngIf="contactUs.get('name')?.hasError('required') && contactUs.get('name')?.touched">
+                Name is required.
+              </div>
+            </div>
+
+            <div>
+              <label for="PhoneNumber"> <i class="fa-solid fa-square-phone"></i> Phone Number</label><br>
+              <input type="number" id="phoneNumber" formControlName="phoneNumber" required>
+              <div class="error" *ngIf="contactUs.get('phoneNumber')?.hasError('required') && contactUs.get('phoneNumber')?.touched">
+                Phone Number is required.
+              </div>
+            </div>
+
+            <div>
+              <label for="email"><i class="fa-solid fa-envelope"></i> Email Id</label><br>
+              <input type="email" id="email" formControlName="email" required>
+              <div class="error" *ngIf="contactUs.get('email')?.hasError('required') && contactUs.get('email')?.touched">
+                Email is required.
+              </div>
+            </div>
+
+            <div>
+              <label for="comment"> <i class="fa-regular fa-comments"></i>Feedback</label><br>
+              <input type="text" id="comment" formControlName="comment" required>
+              <div class="error" *ngIf="contactUs.get('comment')?.hasError('required') && contactUs.get('comment')?.touched">
+                Feedback is required.
+              </div>
+            </div>
+            <br>
+            <div class="error" *ngIf="contactUs.invalid && contactUs.touched">Please fill out all required fields.</div>
+            <div>
+              <button type="submit" class="submit-button"><i class="fa-solid fa-arrow-right-to-bracket"></i> Submit</button>
+            </div>
+          </form>
+            
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</section>
+<br>
+<div>
+  <h3>
+    {{msg}}
+  </h3>
+</div>
+<br><br><br><br><br><br><br><br>
+<footer>
+  <p><i class="fa-regular fa-copyright"></i> 2023 StudentSync <i class="fa-solid fa-dragon"></i> . Made by Dipankar Adhikary with <i class="fa-brands fa-gratipay"></i></p>
+</footer>

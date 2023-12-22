@@ -1,0 +1,35 @@
+<div class="app-container">
+  <header>
+      <h2 *ngIf="userlog"><a routerLink="/home" style="color: rgb(255, 255, 255);font-family: 'Roboto', sans-serif;padding-left: 10px; font-size: 25px;"><i class="fas fa-dragon" style="font-size: 40px;"></i> StudentSync</a></h2>
+      <div class="user-details-bar">
+        <h4>
+            <i *ngIf="userlogD" class="fa-solid fa-user-xmark" style="font-size: 25px;"></i>
+            <i *ngIf="userlog" class="fa-solid fa-user-check" style="font-size: 25px;"></i>
+            <a (click)="show()">{{username}}</a>
+        </h4>
+        <div *ngIf="showData" class="user-details-dropdown">
+            <p><i class="fa-solid fa-file-signature"></i> Name  <span style="color: white;">{{name}}</span></p>
+            <p><i class="fa-regular fa-envelope"></i> Email  <span style="color: white;">{{email}}</span></p>
+            <p><i class="fa-solid fa-users"></i> UserId  <span style="color: white;">{{id}}</span></p>
+            <p><i class="fa-solid fa-list-ol"></i> Password  <span style="color: white;">{{pass}}</span></p>
+        </div>
+    </div>
+    
+    
+      <nav *ngIf="userlog">
+        <a routerLink ="/home"><i class="fa-solid fa-house-chimney-crack"></i> Home</a>
+        <a routerLink="/about"><i class="fa-solid fa-eject"></i> About Us</a>
+        <a routerLink="/programs"><i class="fa-solid fa-bars-progress"></i> Programs</a>
+        <a routerLink="/form"><i class="fa-regular fa-rectangle-list"></i> Form</a>
+        <a routerLink="/contact"><i class="fa-solid fa-id-card"></i> Contact Us</a>
+        <a><button type="button" (click)="logout()"><i class="fas fa-sign-in-alt"></i> {{log}}</button></a>
+
+        
+      </nav>
+        
+  </header>
+  <body>
+    <router-outlet></router-outlet>
+  </body>
+</div>
+

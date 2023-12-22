@@ -1,0 +1,72 @@
+<section>
+  
+
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6"> 
+        <div class="form-container" id="form">
+          <h4>User Registration Page</h4>
+          <form (ngSubmit)="onSubmit()" [formGroup]="studentForm">
+              <div>
+                <label for="Name"><i class="fa-solid fa-file-signature"></i> Name</label>
+                <input type="text" id="Name" formControlName="Name" required  >
+                <span class="error" *ngIf="studentForm.get('Name')?.hasError('required') && studentForm.get('Name')?.touched">
+                User Name is required.
+                </span>
+            </div>
+            <div>
+              <label for="Email"><i class="fa-regular fa-envelope"></i> E-mail</label>
+              <input type="email" id="Email" formControlName="Email" required >
+              <span class="error" *ngIf="studentForm.get('Email')?.hasError('required') && studentForm.get('Email')?.touched">
+              User Email is required (e.g => example@example.in/.com).
+              </span>
+            </div>
+            <div>
+                <label for="UserName"><i class="fas fa-user"></i> New User ID</label>
+                <input type="text" id="UserName" formControlName="UserName" required >
+                <span class="error" *ngIf="studentForm.get('UserName')?.hasError('required') && studentForm.get('UserName')?.touched">
+                User ID is required.
+                </span>
+            </div>
+  
+            <div>
+                <label for="UserPassword"><i class="fas fa-lock"></i> New User Password</label>
+                <input type="password" id="UserPassword" formControlName="UserPassword" required >
+                <span class="error" *ngIf="studentForm.get('UserPassword')?.hasError('required') && studentForm.get('UserPassword')?.touched">
+                User Password is required.
+                </span>
+            </div>
+            <br>
+              <div style="text-align: center;">
+                <button type="submit"><i class="fas fa-sign-in-alt"></i> Register</button>
+              </div>
+              <br>
+              <span style="text-align: center; color: red;" *ngIf="studentForm.invalid && studentForm.touched">
+                <h6>Kindly check all the fields before register.</h6>
+              </span>
+
+              <br>
+              <div>
+                  <h5>Already have an account?</h5>
+                  <h4><a routerLink="/login"><i class="fas fa-user-plus"></i> Login</a></h4>
+              </div>
+            </form>
+          </div>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+    <br><br>
+    <div *ngIf="Result">
+      <h4>{{Result}} <a *ngIf="success" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a></h4>
+    </div>
+    
+    
+    
+    </section>
+
+      <br><br><br><br>
+  <footer>
+    <p><i class="fa-regular fa-copyright"></i> 2023 StudentSync <i class="fa-solid fa-dragon"></i> . Made by Dipankar Adhikary with <i class="fa-brands fa-gratipay"></i></p>
+  </footer>
+      
+    

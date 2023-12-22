@@ -1,0 +1,173 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+  }
+  
+  header {
+    display: flex;
+    background-color: #5f9fe0;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+    padding: 2px;
+    margin-bottom: 5px;
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 100; 
+  }
+
+
+  a {
+    text-decoration: none;
+  }
+  a:hover{
+    color: #c6a53a;
+  }
+
+  h4{
+    text-align: center;
+  }
+
+  
+  nav a {
+    text-decoration: none;
+    color: #000000; 
+    margin: 10px;
+    font-size: 18px;
+    transition: color 0.3s; 
+    text-align: center;
+  }
+  
+  nav a:hover {
+    color: #ffffff; 
+  }
+  
+  nav a.active {
+    font-weight: bold;
+    color: rgb(19, 144, 8);
+  }
+
+  button {
+    background-color: #5f9fe0;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    cursor: pointer;
+    
+  }
+  button:hover {
+    color: #d7c116; 
+  }
+  
+  h4{
+    text-align: center;
+    color: azure;
+    cursor: grab;
+    
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+  
+  h4 a{
+    color: aliceblue;
+  }
+  h4 a:hover{
+    color: #d76a16;
+    cursor: grab;
+  }
+
+  h2 i{
+    color: #ffffff;
+    cursor: grab;
+  }
+
+  .user-details-bar {
+    position: relative; 
+    display: inline-block; 
+}
+
+.user-details-dropdown {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1; 
+    background-color: #eb842f; 
+    border: 1px solid #056c98; 
+    border-radius: 8px; 
+    width: max-content; 
+}
+
+.user-details-bar:hover .user-details-dropdown {
+    display: block; 
+    background-color: #e49021;
+}
+
+.user-details-dropdown p {
+    margin: 5px;
+    padding: 5px;
+    cursor: grab;
+}
+
+
+
+
+  @media only screen and (min-width: 600px) {
+
+    header {
+      padding: 2px;
+    }
+    header.h2.i{
+      font-size: 20px;
+    }
+  
+    div h2, h2 {
+      font-size: 16px;
+    }
+  
+    div h4,h3,h5 {
+      font-size: 14px;
+    }
+  
+    nav a {
+      font-size: 14px; 
+    }
+  }
+  
+
+  @media only screen and (max-width: 600px) {
+    .app-container{
+      padding-top: 280px;
+    }
+
+    header {
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      padding: 10px;
+    }
+  
+    h2,
+    h4 {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+  
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav a {
+      margin: 5px 0;
+      font-size: 15px;
+    }
+  
+    button {
+      margin-top: 10px;
+    }
+    
+  }
