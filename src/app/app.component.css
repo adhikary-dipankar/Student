@@ -80,7 +80,7 @@
   }
 
   h2 i{
-    color: #ef9220;
+    color: #ffffff;
     cursor: grab;
   }
 
@@ -96,14 +96,14 @@
     left: 0;
     z-index: 1; 
     background-color: #eb842f; 
-    border: 1px solid #e4c515; 
+    border: 1px solid #056c98; 
     border-radius: 8px; 
     width: max-content; 
 }
 
 .user-details-bar:hover .user-details-dropdown {
     display: block; 
-    background-color: #5f9fe0;
+    background-color: #e49021;
 }
 
 .user-details-dropdown p {
@@ -118,22 +118,22 @@
   @media only screen and (min-width: 600px) {
 
     header {
-      padding: 4px;
+      padding: 2px;
     }
     header.h2.i{
-      font-size: large;
-    }
-  
-    div h2, h2 {
       font-size: 20px;
     }
   
-    div h4,h3,h5 {
+    div h2, h2 {
       font-size: 16px;
     }
   
+    div h4,h3,h5 {
+      font-size: 14px;
+    }
+  
     nav a {
-      font-size: 20px; 
+      font-size: 14px; 
     }
   }
   
