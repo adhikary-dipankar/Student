@@ -1,11 +1,11 @@
 <div class="app-container">
   <header>
-      <h2 *ngIf="userlog"><a routerLink="/home" style="color: rgb(255, 255, 255);font-family: 'Roboto', sans-serif;padding-left: 10px; font-size: 25px;"><i class="fas fa-dragon" style="font-size: 40px;"></i> StudentSync</a></h2>
+      <h2 *ngIf="userlog"><a routerLink="/home" style="color: rgb(255, 255, 255);font-family: 'Roboto', sans-serif;padding-left: 10px; font-size: 25px;"><i class="fas fa-dragon" style="font-size: 35px;"></i> StudentSync</a></h2>
       <div class="user-details-bar">
         <h4>
-            <i *ngIf="userlogD" class="fa-solid fa-user-xmark" style="font-size: 25px;"></i>
-            <i *ngIf="userlog" class="fa-solid fa-user-check" style="font-size: 25px;"></i>
-            <a (click)="show()">{{username}}</a>
+            <i *ngIf="userlogD" class="fa-solid fa-user-xmark" style="font-size: 20px;"></i>
+            <i *ngIf="userlog" class="fa-solid fa-user-check" style="font-size: 20px;"></i>
+            <a (click)="show()" style="font-size: 18px;">{{username}}</a>
         </h4>
         <div *ngIf="showData" class="user-details-dropdown">
             <p><i class="fa-solid fa-file-signature"></i> Name  <span style="color: white;">{{name}}</span></p>
