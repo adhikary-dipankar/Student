@@ -2,7 +2,7 @@ section {
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
   }
   
 
@@ -29,10 +29,10 @@ section {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     padding-top: 10px;
-    padding-bottom: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 15px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 40px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
@@ -58,7 +58,7 @@ section {
   
   p {
     text-align: left;
-    font-size: 20px;
+    font-size: 15px;
   }
   
   .contact a {
@@ -78,7 +78,7 @@ section {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
   }
   
   .developers-container,
@@ -87,11 +87,11 @@ section {
   .pricing-container {
     background-color: #ffffff;
     color: #333;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 20px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -128,7 +128,7 @@ section {
   .courses-container p,
   .pricing-container p {
     text-align: left;
-    font-size: 18px;
+    font-size: 14px;
   }
   
   .developers-container a,
@@ -153,7 +153,7 @@ section {
   }
 
   footer p {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
   }
   
