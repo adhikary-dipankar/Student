@@ -175,9 +175,6 @@ export class StudentFormComponent {
   }
 
   DShowFormData(){
-    
-    
-    this.searchId=null;
     this.Result=false;
   
   }
