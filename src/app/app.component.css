@@ -34,7 +34,7 @@
   nav a {
     text-decoration: none;
     color: #000000; 
-    margin: 10px;
+    margin: 15px;
     font-size: 18px;
     transition: color 0.3s; 
     text-align: center;
@@ -95,19 +95,15 @@
     top: 100%;
     left: 0;
     z-index: 1; 
-    background-color: #eb842f; 
-    border: 1px solid #056c98; 
-    border-radius: 8px; 
     width: max-content; 
 }
 
 .user-details-bar:hover .user-details-dropdown {
     display: block; 
-    background-color: #e49021;
 }
 
 .user-details-dropdown p {
-    margin: 5px;
+    margin: 2px;
     padding: 5px;
     cursor: grab;
 }

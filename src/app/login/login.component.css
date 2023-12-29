@@ -65,15 +65,10 @@ body {
   
   }
   
-  
-  input[type="text"]:invalid,
-  input[type="number"]:invalid,
-  input[type="password"]:invalid,
-  input[type="date"]:invalid {
-      border-color: rgb(153, 10, 10); 
+  div input:invalid {
+    border-color: #f07110; 
+    box-shadow: 0 0 5px rgba(223, 19, 135, 0.804); 
   }
-  
-  
   
   label{
     font-weight: bold;
