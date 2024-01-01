@@ -92,6 +92,8 @@
 .user-details-dropdown {
     display: none; 
     position: absolute;
+    background-color: whitesmoke;
+    border-radius: 5px;
     top: 100%;
     left: 0;
     z-index: 1; 
@@ -100,6 +102,7 @@
 
 .user-details-bar:hover .user-details-dropdown {
     display: block; 
+
 }
 
 .user-details-dropdown p {
